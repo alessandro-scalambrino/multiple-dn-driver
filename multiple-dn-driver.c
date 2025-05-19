@@ -214,7 +214,7 @@ static int __init pcd_driver_init(void) {
         goto out;
     }
 
-    pcdrv_data.class_pcd = class_create("pcd_class"); // Removed THIS_MODULE
+    pcdrv_data.class_pcd = class_create(THIS_MODULE, "pcd_class"); // Removed THIS_MODULE
     if (IS_ERR(pcdrv_data.class_pcd)) {
         pr_err("Class creation failed\n");
         ret = PTR_ERR(pcdrv_data.class_pcd);
